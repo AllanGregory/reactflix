@@ -31,7 +31,9 @@ function CadastroCategoria() {
 
   useEffect(() => {
 
-    const Url = 'http://localhost:8080/categorias';
+    const Url = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://auroraflix.herokuapp.com/categorias';
 
     fetch(Url)
       .then(async (respostaServidor) => {
